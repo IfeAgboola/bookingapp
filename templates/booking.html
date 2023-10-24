@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Page</title>
+</head>
+<body>
+    <h1>Book a Slot</h1>
+    <form method="POST">
+        <label for="date">Date:</label>
+        <input type="date" name="date" required>
+        <br>
+        <label for="time_slot">Time Slot:</label>
+        <input type="text" name="time_slot" required>
+        <br>
+        <input type="submit" value="Book Slot">
+    </form>
+    <h2>Booked Slots</h2>
+    <ul>
+        {% for date, slots in booked_slots.items() %}
+            <li>{{ date }}: {{ slots|join(', ') }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
